@@ -1,0 +1,39 @@
+
+======================================================================
+ N A C S - Numerical Analysis of Coupled Systems
+
+ Version:    2.0.2745 - pre3
+ Build Type: Release
+
+ (c) SIMetris GmbH 2007 - 2014
+======================================================================
+
+++ NACS run started at 2014-Nov-21 15:31:49 on lse82
+
+++ Using license 'nacs_mphs' (NACS Multiphysics Suite) from 'lse11.e-technik.uni-erlangen.de'
+++ Using 1 of 160 computing licenses from 'lse11.e-technik.uni-erlangen.de'
+++ Reading python parameter file 'cant_linear_1000.py'
+++ Reading mesh '../tesk2/cantilever_1000_lin.nmf'
+++ Creating NACS result writer
+++ Creating Physic 'mechanic'
+++ Setting up system 
+++ Solving TRANSIENT problem with 100 time steps
+
+   *** step 1 / 495.490 mus              end:        n/a           ***
+   *** step 10 / 4.955 ms                end: 2014-Nov-21 15:32:03 ***
+   *** step 20 / 9.910 ms                end: 2014-Nov-21 15:31:56 ***
+   *** step 30 / 14.865 ms               end: 2014-Nov-21 15:31:54 ***
+   *** step 40 / 19.820 ms               end: 2014-Nov-21 15:31:53 ***
+   *** step 50 / 24.775 ms               end: 2014-Nov-21 15:31:55 ***
+   *** step 60 / 29.729 ms               end: 2014-Nov-21 15:31:54 ***
+   *** step 70 / 34.684 ms               end: 2014-Nov-21 15:31:53 ***
+   *** step 80 / 39.639 ms               end: 2014-Nov-21 15:31:53 ***
+   *** step 90 / 44.594 ms               end: 2014-Nov-21 15:31:53 ***
+   *** step 100 / 49.549 ms              end: 2014-Nov-21 15:31:54 ***
+
+++ NACS run finished at 2014-Nov-21 15:31:54
+
+======================================================================
+ Total time:		 Wall clock: 5 s	 CPU time: 3 s
+======================================================================
+

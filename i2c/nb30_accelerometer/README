@@ -1,0 +1,30 @@
+nb30_accelerometer
+    reading accelerometer inside Samsung netbook NB30
+
+to be able to read from the i2c device, 2 module need to be loaded:
+>> modprobe i2c-dev
+>> modprobe i2c-i801
+
+some i2c operation command:
+
+list avaliable i2c bus in system
+>> i2cdetect -l
+
+scan i2c bus 0
+>> i2cdetect -y 0
+
+dump from device at address 0x50 in bus 1
+>> i2cdump -y 1 0x50
+
+set the data at address 0xf0 to 0x77 for the device in bus 2 at address 0x50
+>> i2cset -y 2 0x50 0xf0 0x77
+
+the program was tested under Ubuntu 18.04.2 LTS, to compile the program, please install libi2c-dev
+>> apt-get install libi2c-dev
+
+to build the program, just type make
+>> make
+
+some doc for develop i2c program
+1, https://www.kernel.org/doc/Documentation/i2c/dev-interface
+2, http://linux-sunxi.org/I2Cdev

@@ -1,0 +1,119 @@
+!!!! HEADER !!!!
+FINI     !Exits all old scripts
+/CLEAR   !Clears workspace
+/PREP7   !Starts command interface
+NACSINIT !Starts NACS interface
+
+
+!!!! PARAMETER !!!!
+r_inner = 1e-3    !Radius of inner electrode in m
+r_outer = 6e-3    !Radius of outer electrode in m
+t_outer = 1e-3    !Thickness of outer electrode in m
+h_cylinder = 100e-3     !Height of cylinder in m
+s_air = 10e-3           !Size of additional air boundary in m
+dx = 1e-3               !Meshsize (the smaller the mesh size, the more accurate the results, 
+                        !          BUT the more expensive the simulation!)
+
+!!!! CREATE GEOMETRY !!!!
+! RECTNG,x_min,x_max,y_min,y_max -> rectangle from x_min,y_min to x_max,y_max
+
+!Electrodes
+RECTNG,0,r_inner,0,h_cylinder
+RECTNG,r_outer,r_outer+t_outer,0,h_cylinder
+
+!Dielectricum
+RECTNG,r_inner,r_outer,0,h_cylinder
+
+!Surrounding air consisting of three rectangles
+RECTNG,r_outer+t_outer,r_outer+t_outer+s_air,0,h_cylinder
+RECTNG,0,r_outer+t_outer+s_air,-s_air,0
+RECTNG,0,r_outer+t_outer+s_air,h_cylinder,h_cylinder+s_air
+
+
+!!!! CONNECT GEOMETRY !!!!
+ASEL,all !Select all areas
+AGLUE,all !Glue all selected areas
+
+
+!!!! SETUP MESH !!!!
+! 1. set meshsize (for our purpose usually on lines)
+
+LSEL,all            !Select all lines
+LESIZE,all,dx       !Set the meshsize dx on all selected lines
+
+! 2. mesh all areas
+SETELEMS,'quadr','' !Use elements of first order
+                    !(for later mechanic simulations you will
+                    !also need second order elements using
+                    !'quadr','quad' instead of 'quadr','')
+
+ASEL,all            !Select all areas
+AMESH,all           !Mesh all selected areas
+
+
+!!!! CREATE COMPONENTS !!!!
+! CM,name,etype -> creates a component called 'name' of all currently selected
+! !entities of type 'etype' (can be node, line, area, volume)
+
+ASEL,s,loc,x,0,r_inner !Select ('s' for select) all areas with x coordinates
+                       !between 0 and r_inner;
+                       !Note that 's' unselects all previously selected areas;
+                       !To add areas to the current selection use 'a'
+ASEL,r,loc,y,0,h_cylinder !Reselect ('r' for reselect) from the current selection
+                       !all areas with y between 0 and h_cylinder
+CM,hotEL,area          !Put all currently selected areas to component hotEL
+
+ASEL,s,loc,x,r_inner,r_outer
+ASEL,r,loc,y,0,h_cylinder
+CM,diel,area
+
+ASEL,s,loc,x,r_outer,r_outer+t_outer
+ASEL,r,loc,y,0,h_cylinder
+CM,gndEL,area
+
+!To select all air regions one can select all three rectangles by their coordinates
+!or one can select all areas and unselect the already named components
+ASEL,all               !Select all areas
+ASEL,u,,,hotEL         !Unselect component named hotEL from current selection
+                       !Note that the spaces for loc and x/y where kept free
+ASEL,u,,,gndEL
+ASEL,u,,,diel          !Now only the three air areas are left
+CM,air,area
+
+!Select the top line and the observer point
+!Note that only existing lines and nodes can be selected (e.g. you cannot select
+!a line from the top left to the bottom right corner here)
+tol = dx/5             !When selecting lines or nodes allow a little tolerance
+                       !as otherwise the selection might fail.
+                       !Setting tol to a fraction of the meshsize is in most cases
+                       !a good idea.
+                       
+LSEL,s,loc,x,0,r_outer+t_outer+s_air
+LSEL,r,loc,y,h_cylinder+s_air-tol,h_cylinder+s_air+tol
+CM,topLine,line
+
+NSEL,s,loc,x,r_outer+t_outer+s_air-tol,r_outer+t_outer+s_air+tol
+NSEL,r,loc,y,h_cylinder-tol,h_cylinder+tol
+CM,observer,node
+
+
+!!!! WRITE OUT MESH !!!!
+! 1. create regions for all area- and volume-components
+! REGION,'regionName','compName' -> creates region called regionName
+! !of component compName
+
+REGION,'hotEL_region','hotEL'
+REGION,'gndEL_region','gndEL'
+REGION,'diel_region','diel'
+REGION,'air_region','air'
+
+! 2. create groups for all line- and node-components
+! GROUP,'groupName','compName' -> creates group called groupName
+! !of component compName
+
+GROUP,'topLine_group','topLine'
+GROUP,'observer_group','observer'
+
+! 3. write out model
+WRITEMODEL,'ansysTutorial'
+

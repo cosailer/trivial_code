@@ -1,0 +1,41 @@
+! +--------------------------------------------------------------+
+! |                                                              |
+! |     Sample start.ans file used in conjunction with the       |
+! |                 NACS interface for ANSYS                     |
+! |                                                              |
+! |     Copyright (c), 2007-2014 SIMetris GmbH, Erlangen         |
+! |                                                              |
+! +--------------------------------------------------------------+
+
+
+! The following environment parameters have to be set in order to use
+! the refering interfaces:
+!   NACS_ROOT_DIR   : Root-Directory of NACS 1.x installation
+!   NACS2_ROOT_DIR  : Root-Directory of NACS 2.x installation
+!   NACS_CV         : current version of NACS (1/2)
+
+*DIM,NACSROOT,STRING,128
+/INQUIRE,NACSVERSION,ENV,NACS_CV
+
+*IF,NACSVERSION(1),EQ,'1',THEN
+  ! NACS 1.x start.ans
+  ! use inquire to load environment parameter NACS_ROOT_DIR to nacsroot
+  /INQUIRE,nacsroot,ENV,NACS_ROOT_DIR
+  *IF,NACSROOT(1),EQ,'',THEN
+    *MSG,INFO
+  NO NACS 1.x release has been found on this machine
+    /EOF
+ *ENDIF
+  *ulib,/share/ansys/nacs,mlib,nacsroot(1)  
+*ELSE
+  /INQUIRE,nacsroot,ENV,NACS2_ROOT_DIR
+  *IF,NACSROOT(1),EQ,'',THEN
+    *MSG,INFO
+  NO NACS 2.x release has been found on this machine
+    /EOF
+  *ENDIF
+  *ulib,/share/ansys/nacs,mlib,nacsroot(1)  
+*ENDIF  
+
+! define abbreviation for nacsinit
+*abbr,nacsinit,*use,nacsinit

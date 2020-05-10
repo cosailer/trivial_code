@@ -1,0 +1,23 @@
+f(2)=201.82 Hz
+1st dt= 1/(10*f(2))= 4.9549e-04
+requested time for 10 full periods at a frequncy of f(2)=(1/f(2))*10= 4.9549e-02
+N=4.9549e-02/4.9549e-04 = 100
+
+2nd dt=1/(15*f(2))= 3.3033e-04
+requested time for 10 full periods at a frequncy of f(2)=(1/f(2))*10= 4.9549e-02
+N=4.9549e-02/3.3033e-04=150
+
+3rd dt=1/(20*f(2))= 2.4775e-04
+requested time for 10 full periods at a frequncy of f(2)=(1/f(2))*10= 4.9549e-02
+N=4.9549e-02/2.4775e-04=200
+
+4th dt=1/(25*f(2))= 1.9820e-04
+requested time for 10 full periods at a frequncy of f(2)=(1/f(2))*10= 4.9549e-02
+N=4.9549e-02/1.9820e-04=250
+
+Questions:
+
+1) Time discretization with 200 steps is fine enough.Because the graph which is showing the result of time discretization with 200 steps is quite the same as for the next 
+finer timestep (250 steps).
+
+2) Yes. it’s because that in our case the input frequency and the eigenfrequency of the object are almost the same, also as the Y displacement of top right will exhibit a combination of these two frequencies. so we can see a pure sinusoidal signal.

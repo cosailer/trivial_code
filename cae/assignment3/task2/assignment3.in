@@ -1,0 +1,154 @@
+!!!! ---------------------------------- HEADER ----------------------------------!!!!
+FINI     !Exits all old scripts
+/CLEAR   !Clears workspace
+/PREP7   !Starts command interface
+NACSINIT !Starts NACS interface
+
+!!!! ---------------------------------- PARAMETER ----------------------------------!!!!
+
+r = 10 e -3
+w = 2 e -3
+l = 60 e -3
+d = 150 e -3
+s = 55 e -3
+
+dx = 1 e -3  ! used mesh size
+tol = 1 e -6  ! selection tolerance
+
+! type of elements ( '' for 1 st order , ' quad ' for 2 nd order )
+elemMode = ''
+
+!!!! ---------------------------------- create helper variables ----------------------------------!!!!
+
+! core
+core_x1 = 0
+core_y1 = s
+
+core_x2 = r
+core_y2 = l + s
+
+! coil
+coil_x1 = r
+coil_y1 = 0
+
+coil_x2 = r + w
+coil_y2 = l
+
+! core air
+core_air_x1 = 0
+core_air_y1 = 0
+
+core_air_x2 = r
+core_air_y2 = s
+
+! top air
+top_air_x1 = 0
+top_air_y1 = l + s
+
+top_air_x2 = r + w + d
+top_air_y2 = l + d
+
+! bottom air
+bottom_air_x1 = 0
+bottom_air_y1 = -d
+
+bottom_air_x2 = r + w + d
+bottom_air_y2 = 0
+
+! middle air top
+mid_air_top_x1 = r
+mid_air_top_y1 = l
+
+mid_air_top_x2 = r + w + d
+mid_air_top_y2 = l + s
+
+! middle air bottom
+mid_air_bottom_x1 = r + w
+mid_air_bottom_x2 = r + w + d
+
+mid_air_bottom_y1 = 0
+mid_air_bottom_y2 = l
+
+
+!!!! ---------------------------------- CREATE GEOMETRY ----------------------------------!!!!
+
+! core and coil
+rectng , core_x1 , core_x2 , core_y1 , core_y2
+rectng , coil_x1 , coil_x2 , coil_y1 , coil_y2
+
+! air
+rectng , core_air_x1 , core_air_x2 , core_air_y1 , core_air_y2
+rectng , top_air_x1 , top_air_x2 , top_air_y1 , top_air_y2
+rectng , bottom_air_x1 , bottom_air_x2 , bottom_air_y1 , bottom_air_y2
+rectng , mid_air_top_x1 , mid_air_top_x2 , mid_air_top_y1 , mid_air_top_y2
+rectng , mid_air_bottom_x1 , mid_air_bottom_x2 , mid_air_bottom_y1 , mid_air_bottom_y2
+
+! connect areas
+asel , all
+aglue , all
+
+
+!!!!---------------------------------- CREATE COMPONENTS ----------------------------------!!!!
+
+! core
+asel ,s , loc ,x , core_x1 , core_x2
+asel ,r , loc ,y , core_y1 , core_y2
+cm , core , area
+
+! coil
+asel ,s , loc ,x , coil_x1 , coil_x2
+asel ,r , loc ,y , coil_y1 , coil_y2
+cm , coil , area
+
+! select everything
+! deselect everthing that is not air
+! air
+asel , all
+asel ,u , , , core
+asel ,u , , , coil
+cm , air , area
+
+! define outer boundaries
+lsel ,s , loc ,x , 0 , 0
+lsel ,r , loc ,y , -d , l+d
+cm , outerbounds_left , line
+
+lsel ,s , loc ,x , d+r+w , d+r+w 
+lsel ,r , loc ,y , -d, l+d
+cm , outerbounds_right , line
+
+lsel ,s , loc ,x , 0 , d+r+w 
+lsel ,r , loc ,y , l+d , l+d
+cm , outerbounds_top , line
+
+lsel ,s , loc ,x , 0 , d+r+w 
+lsel ,r , loc ,y , -d , -d
+cm , outerbounds_bot , line
+
+!!!! ---------------------------------- SETUP MESH ----------------------------------!!!!
+
+! assign line size
+lsel , all
+lesize , all , dx
+
+! area mesh
+setelems , 'quadr' , elemMode
+asel , all
+amesh , all
+
+!!!! ---------------------------------- Regions ----------------------------------!!!!
+
+region , 'core' , 'core'
+region , 'coil' , 'coil'
+region , 'air' , 'air'
+
+group , 'outerbounds_left' , 'outerbounds_left'
+group , 'outerbounds_right' , 'outerbounds_right'
+group , 'outerbounds_top' , 'outerbounds_top'
+group , 'outerbounds_bot' , 'outerbounds_bot'
+
+! ----------------------- !
+! Write NACS Files :
+! ----------------------- !
+writemodel , 'assignment3.2_55'
+

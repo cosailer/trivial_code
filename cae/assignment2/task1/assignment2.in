@@ -1,0 +1,92 @@
+!!!! ---------------------------------- HEADER ----------------------------------!!!!
+FINI     !Exits all old scripts
+/CLEAR   !Clears workspace
+/PREP7   !Starts command interface
+NACSINIT !Starts NACS interface
+
+
+!!!! ---------------------------------- PARAMETER ----------------------------------!!!!
+
+length = 50e-2     !the length of the plate in m
+height = 1e-2      !the height of the plate in m
+
+num_x = 10
+num_y = 4
+
+dx = length / num_x   !used mesh size in width
+dy = height / num_y   !used mesh size in height
+
+tol = min(dx, dy)/5
+
+elemMode = ''
+
+!!!! ---------------------------------- CREATE GEOMETRY ----------------------------------!!!!
+
+! cantilever
+RECTNG, 0, length, 0, height
+CM, cantilever, area
+
+! left boundary
+LSEL, s, loc, x, 0, tol
+LSEL, r, loc, y, 0, height
+CM, left , line
+
+! right boundary
+LSEL, s, loc, x, length, length + tol
+LSEL, r, loc, y, 0, height
+CM, right, line
+
+!!!! ---------------------------------- SETUP MESH ----------------------------------!!!!
+
+! assign bottom line
+LSEL, s, loc, x, 0, length   ! select line with x fom 0-length
+LSEL, r, loc, y, 0, tol      ! y from 0-tol
+LESIZE, all, dx              ! create mesh with size dx
+
+! assign top line
+LSEL, s, loc, x ,0 , length
+LSEL, r, loc, y , height , height + tol
+LESIZE , all , dx
+
+! assign left line
+LSEL, s, loc, x, 0, tol
+LSEL, r, loc, y, 0, height
+LESIZE, all , dy
+
+! assign right line
+LSEL, s, loc, x, length, length + tol
+LSEL, r, loc, y, 0, height
+LESIZE, all , dy
+
+! area mesh
+MSHKEY, 1
+SETELEMS, 'quadr', elemMode
+ASEL, all
+AMESH, all
+
+!!!!---------------------------------- CREATE COMPONENTS ----------------------------------!!!!
+
+! top right node
+NSEL, s, loc, x, length, length + tol
+NSEL, r, loc, y, height, height + tol
+CM, top_right, node
+
+! bottom right node
+NSEL, s, loc, x, length ,length + tol
+NSEL, r, loc, y, 0 ,tol
+CM, bot_right, node
+
+REGION, 'cantilever', 'cantilever'
+
+GROUP, 'top_right', 'top_right'
+GROUP, 'bot_right', 'bot_right'
+GROUP, 'left_edge', 'left'
+GROUP, 'right_edge', 'right'
+
+!!!!---------------------------------- WRITE OUT MESH ----------------------------------!!!!
+
+*if, elemMode, eq, '', then
+    WRITEMODEL, 'cantilever_%num_x%_lin'
+*else
+    writemodel, 'cantilever_%num_x%_quad'
+*endif

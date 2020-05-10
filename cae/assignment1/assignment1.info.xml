@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+
+<nacsInfo status="finished" infoWriteCounter="6" infoRejectCounter="1" index="1">
+  <summary>
+    <timer wall="1" cpu="0.89" calls="1"/>
+    <!-- Memory is in kB-->
+    <memory final="72392" peak="73332"/>
+  </summary>
+  <header>
+    <environment started="2014-Nov-07 18:44:36" host="lse87"/>
+    <domain dimensions="2" modelDepth="1" elements="263" nodes="296">
+      <regions>
+        <region name="airRegion" id="0" type="volume" regular="no" hom="yes" nodes="264" elems="204" isQuadratic="no"/>
+        <region name="dielectricum_region" id="1" type="volume" regular="yes" hom="yes" nodes="34" elems="16" isQuadratic="no"/>
+        <region name="gndElectrode_region" id="2" type="volume" regular="yes" hom="yes" nodes="34" elems="16" isQuadratic="no"/>
+        <region name="midElectrode_region" id="3" type="volume" regular="no" hom="yes" nodes="35" elems="17" isQuadratic="no"/>
+        <region name="topElectrode_region" id="4" type="volume" regular="yes" hom="yes" nodes="22" elems="10" isQuadratic="no"/>
+      </regions>
+      <namedNodes/>
+      <namedElements/>
+      <boundingBox>
+        <r min="0" max="2.5e-05"/>
+        <z min="-5e-06" max="8e-06"/>
+      </boundingBox>
+      <coordinateSystems/>
+      <coordinateSystems/>
+    </domain>
+    <progOpts problem="assignment1" parameterFile="/home/userHome/stud/cae42/cae/assignment1/assignment1.py" meshFile="" errorLevel="1" numCores="1" logLevel="2" isRestarted="false" license="nacs_mphs" workDir="/home/userHome/stud/cae42/cae/assignment1" user="cae42" pid="24227" binary="/home/shareAll/linux_bin/nacs/nacs2-pre2/bin//../bin/lin64/nacsbin">
+      <!-- values of command line parameters (including defaults)-->
+      <nacs version="2.0.2570 - pre2" build="Release" svn_revision="2570"/>
+    </progOpts>
+  </header>
+  <sequenceStep>
+    <!-- === SEQUENCE STEP ===-->
+    <static>
+      <process>
+        <step analysis_id="0"/>
+      </process>
+    </static>
+    <PDE>
+      <electrostatic>
+        <header>
+          <region name="midElectrode_region" damping="none"/>
+          <region name="airRegion" damping="none"/>
+          <region name="gndElectrode_region" damping="none"/>
+          <region name="dielectricum_region" damping="none"/>
+          <region name="topElectrode_region" damping="none"/>
+          <integrators>
+            <matrixBiLinearForms>
+              <bilinearForm integrator="LinElecIntegrator" region="dielectricum_region">
+                <row pde="electrostatic" functionId="0" result="elecPotential"/>
+                <column pde="electrostatic" functionId="0" result="elecPotential"/>
+                <destination feMatrix="stiffness" feMatrixMapped="system" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="yes"/>
+              </bilinearForm>
+              <bilinearForm integrator="LinElecIntegrator" region="airRegion">
+                <row pde="electrostatic" functionId="0" result="elecPotential"/>
+                <column pde="electrostatic" functionId="0" result="elecPotential"/>
+                <destination feMatrix="stiffness" feMatrixMapped="system" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="yes"/>
+              </bilinearForm>
+              <bilinearForm integrator="LinElecIntegrator" region="gndElectrode_region">
+                <row pde="electrostatic" functionId="0" result="elecPotential"/>
+                <column pde="electrostatic" functionId="0" result="elecPotential"/>
+                <destination feMatrix="stiffness" feMatrixMapped="system" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="yes"/>
+              </bilinearForm>
+              <bilinearForm integrator="LinElecIntegrator" region="topElectrode_region">
+                <row pde="electrostatic" functionId="0" result="elecPotential"/>
+                <column pde="electrostatic" functionId="0" result="elecPotential"/>
+                <destination feMatrix="stiffness" feMatrixMapped="system" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="yes"/>
+              </bilinearForm>
+              <bilinearForm integrator="LinElecIntegrator" region="midElectrode_region">
+                <row pde="electrostatic" functionId="0" result="elecPotential"/>
+                <column pde="electrostatic" functionId="0" result="elecPotential"/>
+                <destination feMatrix="stiffness" feMatrixMapped="system" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="yes"/>
+              </bilinearForm>
+            </matrixBiLinearForms>
+            <rhsLinearForms/>
+          </integrators>
+        </header>
+        <material name="air">
+          <regionList>
+            <region name="airRegion"/>
+          </regionList>
+          <property name="Electric_Permittivity_Tensor">
+            <tensor dim1="3" dim2="3">
+              <complex> (8.85e-12,0) (0,0) (0,0) 
+(0,0) (8.85e-12,0) (0,0) 
+(0,0) (0,0) (8.85e-12,0)
+</complex>
+
+            </tensor>
+          </property>
+          <property name="Electric_Permittivity_Scalar" value="(8.85e-12,0)"/>
+          <axisMapping coordSysId="default">
+            <axis1 dir="z" factor="1"/>
+            <axis2 dir="x" factor="1"/>
+            <rotationMatrix dim1="3" dim2="3">
+              <real>
+                 0.000000e+00  0.000000e+00  1.000000e+00
+                 1.000000e+00  0.000000e+00  0.000000e+00
+                 0.000000e+00  1.000000e+00  0.000000e+00
+              </real>
+            </rotationMatrix>
+          </axisMapping>
+        </material>
+        <material name="SrTiO3">
+          <regionList>
+            <region name="dielectricum_region"/>
+          </regionList>
+          <property name="Electric_Permittivity_Tensor">
+            <tensor dim1="3" dim2="3">
+              <complex> (2.655e-09,0) (0,0) (0,0) 
+(0,0) (2.655e-09,0) (0,0) 
+(0,0) (0,0) (2.655e-09,0)
+</complex>
+
+            </tensor>
+          </property>
+          <property name="Electric_Permittivity_Scalar" value="(2.655e-09,0)"/>
+          <axisMapping coordSysId="default">
+            <axis1 dir="z" factor="1"/>
+            <axis2 dir="x" factor="1"/>
+            <rotationMatrix dim1="3" dim2="3">
+              <real>
+                 0.000000e+00  0.000000e+00  1.000000e+00
+                 1.000000e+00  0.000000e+00  0.000000e+00
+                 0.000000e+00  1.000000e+00  0.000000e+00
+              </real>
+            </rotationMatrix>
+          </axisMapping>
+        </material>
+        <material name="Aluminum">
+          <regionList>
+            <region name="gndElectrode_region"/>
+            <region name="midElectrode_region"/>
+            <region name="topElectrode_region"/>
+          </regionList>
+          <property name="Electric_Permittivity_Tensor">
+            <tensor dim1="3" dim2="3">
+              <complex> (0.0885,0) (0,0) (0,0) 
+(0,0) (0.0885,0) (0,0) 
+(0,0) (0,0) (0.0885,0)
+</complex>
+
+            </tensor>
+          </property>
+          <property name="Electric_Permittivity_Scalar" value="(0.0885,0)"/>
+          <axisMapping coordSysId="default">
+            <axis1 dir="z" factor="1"/>
+            <axis2 dir="x" factor="1"/>
+            <rotationMatrix dim1="3" dim2="3">
+              <real>
+                 0.000000e+00  0.000000e+00  1.000000e+00
+                 1.000000e+00  0.000000e+00  0.000000e+00
+                 0.000000e+00  1.000000e+00  0.000000e+00
+              </real>
+            </rotationMatrix>
+          </axisMapping>
+          <property name="Electric_Permittivity_Tensor">
+            <tensor dim1="3" dim2="3">
+              <complex> (0.0885,0) (0,0) (0,0) 
+(0,0) (0.0885,0) (0,0) 
+(0,0) (0,0) (0.0885,0)
+</complex>
+
+            </tensor>
+          </property>
+          <property name="Electric_Permittivity_Scalar" value="(0.0885,0)"/>
+          <property name="Electric_Permittivity_Tensor">
+            <tensor dim1="3" dim2="3">
+              <complex> (0.0885,0) (0,0) (0,0) 
+(0,0) (0.0885,0) (0,0) 
+(0,0) (0,0) (0.0885,0)
+</complex>
+
+            </tensor>
+          </property>
+          <property name="Electric_Permittivity_Scalar" value="(0.0885,0)"/>
+        </material>
+        <!-- List of defined Spaces-->
+        <feSpaces>
+          <elecPotential>
+            <h1Nodal>
+              <regionList>
+                <airRegion/>
+                <default order="1"/>
+                <dielectricum_region/>
+                <gndElectrode_region/>
+                <midElectrode_region/>
+                <topElectrode_region/>
+              </regionList>
+            </h1Nodal>
+          </elecPotential>
+        </feSpaces>
+        <feFunctions>
+          <elecPotential>
+            <bcsAndLoads/>
+            <homDirichletBC>
+              <elemList name="gndElectrode_region" dofs=""/>
+            </homDirichletBC>
+            <inhomDirichletBC>
+              <elemList name="topElectrode_region" dofs="" value="50"/>
+            </inhomDirichletBC>
+          </elecPotential>
+        </feFunctions>
+      </electrostatic>
+    </PDE>
+    <OLAS>
+      <electrostatic>
+        <setup idbcHandling="elimination" staticCondensation="no">
+          <!-- List of registered FeFunctions-->
+          <feFunctions totalNumEqns="262" totalNumFreeEqns="240" totalNumDirichlet="22">
+            <function id="0" name="elecPotential" numEqns="262" lastFreeEqn="240" numDirichlet="22">
+              <usedInBlocks>
+                <block id="0"/>
+              </usedInBlocks>
+            </function>
+          </feFunctions>
+          <!-- List of SBM-blocks-->
+          <sbmBlocks>
+            <block id="0" size="228" lastFreeIndex="206"/>
+          </sbmBlocks>
+          <!-- Time stepping information-->
+          <timeStepping isImplicitExplicit="no"/>
+          <setupTime wall="0" cpu="0" calls="1"/>
+          <!-- List of defined matrices-->
+          <matrices>
+            <!-- Memory is in MByte-->
+            <system totalNumRows="206" totalNumCols="206" totalNumNonZeros="1562" totalFillLevelPerCent="3.6808" totalMemory="0.011917">
+              <matrix blockRow="0" blockCol="0" storageType="sparseSym" sharedPattern="yes" numRows="206" numCols="206" numNonZeros="1562" fillLevelPerCent="3.6808" memory="0.011917" upperBandWidth="196" lowerBandWidth="196" avgBandWidth="126" symCounterPart="no" orderingType="noReordering"/>
+            </system>
+          </matrices>
+        </setup>
+        <solver>
+          <pardiso numThreads="1">
+            <summary>
+              <setup>
+                <timer wall="0" cpu="0.01" calls="1"/>
+              </setup>
+              <solve>
+                <timer wall="0" cpu="0" calls="1"/>
+              </solve>
+            </summary>
+            <process>
+              <solver numIter="-1" finalNorm="-1"/>
+            </process>
+          </pardiso>
+        </solver>
+        <precond>
+          <idPrecond>
+            <summary>
+              <setup>
+                <timer wall="0" cpu="0" calls="1"/>
+              </setup>
+              <precond>
+                <timer wall="0" cpu="0" calls="0"/>
+              </precond>
+            </summary>
+          </idPrecond>
+        </precond>
+        <process>
+          <solver solutionIsOkay="yes"/>
+        </process>
+      </electrostatic>
+    </OLAS>
+    <analysis>
+      <summary>
+        <assemble>
+          <timer wall="0" cpu="0" calls="1"/>
+        </assemble>
+      </summary>
+    </analysis>
+  </sequenceStep>
+</nacsInfo>

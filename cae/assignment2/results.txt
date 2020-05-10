@@ -1,0 +1,109 @@
+===================================================================
+RESULTS of Assignment 2 - Beding cantilever
+group7: cae42, cae02, cae03
+===================================================================
+
+___________________________________________________________________
+
+>> Task1 
+   
+   Submitted files:(under task1 folder)
+   - scripts: assignment2.in, to create different mesh file, only "num_x" in the script is changed
+   - mesh: *.nmf, 10 files total
+   - nacs: *.py, 10 files total
+   - screenshots: task1_eleFeildIntensity.jpg, task1_elePotential.jpg
+   
+   Calculated results:
+
+   E = 195e9
+   J = l*h^3/12
+   p = 7850
+   
+   C = sqr(EJ/pA) = sqr( (E*h^2)/(12*p) ) = sqr((195e9*1e-4)/(12*7850)) = 14.388
+   
+   f = ( r^2 * C ) / (2*pi)
+
+   r(1) = 1.875*2 = 3.75
+   r(2) = 4.694*2 = 9.388
+   r(3) = 7.855*2 = 15.710
+
+   f(1) = 3.75^2 * 14.388 / (2*pi) = 32.202 Hz
+   f(2) = 9.388^2 * 14.388 / (2*pi) = 201.82 Hz
+   f(3) = 15.7105^2 * 14.388 / (2*pi) = 565.20 Hz
+
+   Simulated results:
+
+   for num_x = 10, 250, 500, 750, 1000
+
+                         f1       f2       f3
+   cantilever_10_lin     106.131  671.629  1924.46
+   cantilever_10_quad    33.7123  212.322  599.881
+   cantilever_250_lin    33.9799  212.549  593.365
+   cantilever_250_quad   33.5508  209.851  585.765
+   cantilever_500_lin    33.7976  211.405  590.152
+   cantilever_500_quad   33.5495  209.843  585.74
+   cantilever_750_lin    33.7636  211.192  589.554
+   cantilever_750_quad   33.5491  209.84   585.733
+   cantilever_1000_lin   33.7517  211.118  589.344
+   cantilever_1000_quad  33.549   209.839  585.73
+   
+   Questions:
+   - 1) Which mechanical subtype do you need to model the given geometry ?
+        ans: plane strain
+
+   - 2) How do the simulated eigenfrequencies change if the number of elements in x-direction gets increased? Are there differences between linear and quadratic elements? Explain the observed
+behavior!
+        ans: It decreases and becomes more closed to calculated ones. The differences in the node¡¯s structure, results for quadratic elements are closer to the calculated ones. 
+
+   - 3) Compare the simulated eigenfrequencies with the analytically calculated ones.
+        ans: the simulated results are larger than the calculated results. here is the list of simulated results.
+___________________________________________________________________
+
+>> Task2
+   
+   Submitted files:(under task2 folder)
+   - nacs: cantilever_10_lin.py, cantilever_10_quad.py, cantilever_1000_lin.py, cantilever_1000_quad.py, 
+   - plots:(under task2/plots folder) *.jpg   4 plots total
+	
+   Questions:
+   
+   - 1) How does the harmonic behavior change if the number of elements in x-direction gets increased?
+        ans: By increasing the elements in the x-direction we get closer to the calculated result. Having small number of elements in the x-direction leads to big difference between the harmonic behavior and the calculated result.
+
+   - 2) How does the harmonic behavior change if you use quadratic instead of linear elements?
+        ans: Using quadratic elements instead of linear elements changes the accuracy of the simulated harmonic behaviour with respect to the calculated result.
+___________________________________________________________________
+
+>> Task3
+
+   Submitted files:(under task3 folder)
+   - nacs: cant_linear_1000.10.py, cant_linear_1000.15.py, cant_linear_1000.20.py, cant_linear_1000.25.py
+   - plots: (under task3/plots folder) *.jpg   4 plots total
+
+   Questions:
+   - 1) Which time discretization can be seen as fine enough, i.e. for which timestep dt are the results
+nearly the same as for the next finer timestep?
+        ans: Time discretization with 200 steps is fine enough.Because the graph which is showing the result of time discretization with 200 steps is quite the same as for the next 
+finer timestep (250 steps).
+
+   - 2) Look at the plot you created. Do you see a pure sinusoidal signal with a frequency of f2?
+Explain your observation.
+        ans: Yes. it¡¯s because that in our case the input frequency and the eigenfrequency of the object are almost the same, also as the Y displacement of top right will exhibit a combination of these two frequencies. so we can see a pure sinusoidal signal.
+     
+_______________________________________________________________________
+grades:
+4.5/7 
+Task 1: Why differ results of linear and quadratic elements so strong?
+        Locking effects cause artificial stiffness in material. -0.5
+        
+Task 2: please describe your observations more precisely (e.g. do the frequencies shift to higher or lower values
+        if you increase the resolution?) -0.5
+        
+Task 2,3: plots are not labeled correctly (units missing) 2x -0.5 Remark: next time please plot all results to same
+          figure. Makes observations much easier
+          
+Task 3: Do you get a pure sinusoidal signal? -> No, you get also a sinus of lower frequency (~32 Hz = f1) -0.5
+
+Task 3: Why do you say that 200 steps are fine enough, but you calculated only with 20?
+     
+     

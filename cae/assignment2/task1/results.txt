@@ -1,0 +1,89 @@
+
+E = 195e9
+J = l*h^3/12
+p = 7850
+
+C = sqr(EJ/pA) = sqr( (E*h^2)/(12*p) ) = sqr((195e9*1e-4)/(12*7850)) = 14.388
+
+f = ( r^2 * C ) / (2*pi)
+
+r(1) = 1.875*2 = 3.75
+r(2) = 4.694*2 = 9.388
+r(3) = 7.855*2 = 15.710
+
+f(1) = 3.75^2 * 14.388 / (2*pi) = 32.202 Hz
+f(2) = 9.388^2 * 14.388 / (2*pi) = 201.82 Hz
+f(3) = 15.7105^2 * 14.388 / (2*pi) = 565.20 Hz
+
+questions:
+
+1, plane strain, because the width of the part is so big that the plane strain in Z0direction will be equal to 0.
+2,It decreases and becomes more closed to calculated ones. The differences in the node’s structure, results for quadratic elements are closer to the calculated ones. 
+
+3, the simulated results are larger than the calculated results. here is the list of simulated results:
+=======
+1, plane strain
+2,It dicresease and became more clsoe to calculated ones. They are difference between linear and qaudradic elements,
+quadradic elemts lead to more acurate answers 
+3, the simulated results are larger than the calculated results
+
+
+num_x = 10, 250, 500, 750, 1000
+
+
+cantilever_10_lin.nmf
+             106.131 |          3.51752e-09
+             671.629 |          2.38221e-10
+             1924.46 |          1.09116e-07
+
+cantilever_10_quad.nmf
+             33.7123 |           1.4236e-07
+             212.322 |          7.74458e-09
+             599.881 |          2.39828e-06
+
+cantilever_250_lin.nmf
+             33.9799 |          1.10346e-08
+             212.549 |          4.47054e-10
+             593.365 |          4.83244e-08
+
+cantilever_250_quad.nmf
+             33.5508 |          4.14042e-08
+             209.851 |          1.30517e-09
+             585.765 |          1.22725e-08
+
+cantilever_500_lin.nmf
+             33.7976 |          1.73659e-08
+             211.405 |          5.02747e-10
+             590.152 |          6.24703e-08
+
+cantilever_500_quad.nmf
+             33.5495 |          6.31072e-08
+             209.843 |          3.38572e-09
+              585.74 |          1.13674e-08
+
+cantilever_750_lin.nmf
+             33.7636 |          3.06902e-08
+             211.192 |          1.30723e-09
+             589.554 |          2.31522e-06
+
+cantilever_750_quad.nmf
+             33.5491 |          8.94033e-08
+              209.84 |           4.7702e-09
+             585.733 |          2.05491e-08
+
+cantilever_1000_lin.nmf
+             33.7517 |          4.43565e-08
+             211.118 |          1.33951e-09
+             589.344 |          8.90344e-07
+
+cantilever_1000_quad.nmf
+              33.549 |          1.43328e-07
+             209.839 |          6.16718e-09
+              585.73 |          2.96762e-08
+   
+
+
+
+
+
+

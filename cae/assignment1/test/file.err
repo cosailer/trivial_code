@@ -1,0 +1,458 @@
+/COM,ANSYS RELEASE 14.5    UP20120918       11:59:30    12/03/2014
+
+ *** WARNING ***                         CP =       0.372   TIME= 11:59:30
+ /CLEAR destroys the effects of all previous input and starts a new      
+ database.                                                               
+
+ *** WARNING ***                         CP =       1.420   TIME= 11:59:35
+ Deactivation of element shape checking is not recommended.              
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.628   TIME= 11:59:38
+ Element type 1 is undefined.                                            
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.632   TIME= 11:59:38
+ Element type 2 is undefined.                                            
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.636   TIME= 11:59:38
+ Element type 13 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.636   TIME= 11:59:38
+ Element type 14 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.636   TIME= 11:59:38
+ Element type 15 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.636   TIME= 11:59:38
+ Element type 16 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.636   TIME= 11:59:38
+ Element type 17 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.636   TIME= 11:59:38
+ Element type 18 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 19 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 20 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 21 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 22 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 23 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 24 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 25 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 26 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 27 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.640   TIME= 11:59:38
+ Element type 28 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 29 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 30 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 31 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 32 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 33 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 34 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 35 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 36 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 37 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.644   TIME= 11:59:38
+ Element type 38 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 39 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 40 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 41 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 42 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 43 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 44 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 45 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 46 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 47 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.648   TIME= 11:59:38
+ Element type 48 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 49 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 50 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 51 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 52 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 53 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 54 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 55 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 56 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 57 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 58 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.652   TIME= 11:59:38
+ Element type 59 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 60 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 61 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 62 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 63 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 64 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 65 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 66 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 67 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 68 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.656   TIME= 11:59:38
+ Element type 69 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 70 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 71 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 72 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 73 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 74 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 75 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 76 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 77 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 78 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 79 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.660   TIME= 11:59:38
+ Element type 80 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 81 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 82 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 83 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 84 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 85 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 86 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 87 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 88 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 89 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 90 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 91 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 92 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 93 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 94 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 95 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 96 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 97 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 98 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 99 is undefined.                                           
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***   SUPPRESSED MESSAGE    CP =       2.664   TIME= 11:59:38
+ Element type 100 is undefined.                                          
+  Line= *GET,WH5DES_typetmp_,ETYP,AR21,ATTR,ENAM                         
+  The *GET command is ignored.                                           

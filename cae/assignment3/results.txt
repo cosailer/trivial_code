@@ -1,0 +1,125 @@
+===================================================================
+RESULTS of Assignment 2 - Magnetic Field Problem
+group7: cae42, cae03
+===================================================================
+
+___________________________________________________________________
+
+>> Task1 
+   
+   Submitted files:(under task1 folder)
+   - scripts: assignment3_task1.in,   d varies from 50e-3 to 150e-3 to generate all 7 files
+   - mesh: assignment3_50.nmf - assignment3_150.nmf, 7 files total
+   - nacs: assignment3_task1.py, only the input mesh is changed, the other stays the same
+   - screenshots: mag_vecPotential_50.jpg, mag_vecPotential_150.jpg
+   - plot: plot1.png
+   
+   Calculations:
+      
+       inner core radius:  r = 10 e -3 (m)
+       thickness of coil:  w = 2 e -3 (m)
+       length of the coil: l = 60 e -3 (m)
+
+       >> calculated L:
+   
+       u(0) = 1.25664e-06  (4*pi*10-7)
+       N = 50
+
+       A = pi*r^2
+
+       L = ( u(0) * N^2 * A )/l = ( (1.25664e-06) * 2500 * pi * (10e-3) * (10e-3) ) / (60e-3)
+                                = 1.6449e-05 (H)
+                            
+       >> simulated L:
+   
+       d(mm)   L(H)
+       50      1.56452e-05
+       70      1.57677e-05
+       90      1.58148e-05
+       110     1.58364e-05
+       130     1.58478e-05
+       150     1.58543e-05
+       200     1.58617e-05
+   
+   Questions:
+   
+   - 1) What material do you have to set for the coil to avoid eddy currents in its interior?
+   
+        ans: air
+        
+   - 2) Which boundary conditions do you have to set in Nacs at the axis of rotation and along
+        the outer boundary? What is/are the corresponding boundary condition(s) for the magnetic
+        potential?
+        
+        ans: to generate a solenoidal magnetic field, the tangential component of the magnetic
+             vector potential at the border is set to zero
+        
+        Boundary Condition in NACS <=> set FluxParallel for all boundaries
+        
+   - 3) How does the inductance of the setup change if you increase the distance d to the
+        boundary? Does the value converge?
+        
+        ans: if you increase d, the simulated L will increase as well, and it seems to converge 
+             to a certain value.
+        
+   - 4) Compare the simulated inductance with the analytically calculated one and explain the
+        differences. Is the model appropriate for further investigations?
+        
+        ans: The simulated inductance is always smaller than the analytically calculated one,
+             because the simulated inductor is inside boundary, and in reality the there is
+             no boundary. In general, the difference is not so significant, therefore it is
+             a good model.
+        
+   - 5) Compare the screenshots of the magnetic vector potential for d = 50 mm and d = 150 mm.
+        What do you observe, especially at the boundary?
+        
+        ans: the simulated magnetic line for d=50 seems to be compressed at the boundary,
+             which means that the vector potential for d=50 has higher density, which is the
+             result from the boundary condition set in NACS
+        
+___________________________________________________________________
+
+>> Task2
+   
+   Submitted files:(under task2 folder)
+   - scripts: assignment3_task2.in,      s varies from 5e-3 to 55e-3 to generate all 11 files
+   - mesh: assignment3.2_5.nmf - assignment3.2_55.nmf,           11 files total
+   - nacs: assignment3_task2.py,    only the input mesh is changed, the other stays the same
+   - screenshots: mag_fluxDensity_5.jpg, mag_fluxDensity_30.jpg
+   - plot: plot2.png
+   
+       >> simulated L:
+       
+       s(mm)  L(H)
+       5      14.8684e-5
+       10     13.5726e-5
+       15     11.9656e-5
+       20     10.2382e-5
+       25     8.5165e-05
+       30     6.8902e-05
+       35     5.42506e-05
+       40     4.16856e-05
+       45     3.1533e-05
+       50     2.39822e-05
+       55     1.90877e-05
+       
+   Questions:
+   
+   - 1) Compare the Gid screenshots with the iron core at s = 5 mm and s = 30 mm. How does the
+        magnetic flux density change?
+        
+        ans: The flux density has the highest value at the part inside the coil with
+             the core inserted, when the iron core moved up, the flux density of the lower part
+             of the coil and the upper part of the iron core decreased significantly.
+
+   - 2) Describe the plot showing L in dependency of s and try to formulate the relation s ⇒ L(s).
+        You do not have to derive formulas! Just describe some basic properties like slope, type
+        of relation (linear, quadratic, ...) etc.
+        
+        ans: based on the property of the plot, we can see that the slope of the line is negative
+             and the line is very smooth. Therefore the relation between s and L(s) is almost
+             linear, and with s increasing, the inductance L drops at a linear pace. 
+        
+        
+        
+        

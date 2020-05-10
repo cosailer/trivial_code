@@ -1,0 +1,84 @@
+/BATCH  
+/COM,ANSYS RELEASE 14.5    UP20120918       11:59:30    12/03/2014
+/input,start145,ans,
+!!!! ---------------------------------- HEADER ----------------------------------!!!!   
+! /CLEAR
+*use,nacsinit !Starts NACS interface
+!!!! ---------------------------------- PARAMETER ----------------------------------!!!!
+*SET,dx , 0.25e-6                   !Meshsize (the smaller the mesh size, the more accurate the results,
+*SET,material_height , 0.5e-6    !the same height of all electrode in m 
+*SET,middle_air_height , 1e-6    !the height of the middle air layer in m   
+*SET,r_top_electrode , 12e-6     !the radius of the top electrode   
+*SET,r_gnd_electrode , 20e-6     !the radius of the ground electrode
+*SET,middle_air_right , 8e-6    !the length of the right part of middle air 
+*SET,air_thick , 5e-6            !the thickness of the outer air
+!!!! ---------------------------------- CREATE GEOMETRY ----------------------------------!!!!  
+! RECTNG,x_min,x_max,y_min,y_max -> rectangle from x_min,y_min to x_max,y_max   
+!Electrodes 
+RECTNG, 0, r_gnd_electrode, 0, material_height                     !ground electrode
+RECTNG, 0, r_gnd_electrode, material_height*2, material_height*3   !middle electrode
+RECTNG, 0, r_top_electrode, material_height*3 + middle_air_height, material_height*4 + middle_air_height   !top electrode   
+!Dielectricum   
+RECTNG, 0, r_gnd_electrode, material_height, material_height*2   !middle dielectricum   
+!Surrounding air consisting of 5 rectangles 
+!bottom air 
+RECTNG, 0, r_gnd_electrode, -air_thick, 0   
+!middle air 
+RECTNG, 0, r_top_electrode, material_height*3, material_height*3 + middle_air_height
+!top air
+RECTNG, 0, r_top_electrode, material_height*4 + middle_air_height, material_height*4 + middle_air_height + air_thick
+!top right air  
+RECTNG, r_top_electrode, r_gnd_electrode + air_thick, material_height*3, material_height*4 + middle_air_height + air_thick  
+!bottom right air   
+RECTNG, r_gnd_electrode, r_gnd_electrode + air_thick, -air_thick, material_height*3 
+!!!! ---------------------------------- CONNECT GEOMETRY ----------------------------------!!!! 
+ASEL,all !Select all areas  
+AGLUE,all !Glue all selected areas  
+!!!! ---------------------------------- SETUP MESH ----------------------------------!!!!   
+! 1. set meshsize (for our purpose usually on lines)
+LSEL,all            !Select all lines   
+LESIZE,all,dx       !Set the meshsize dx on all selected lines  
+! 2. mesh all areas 
+*use,setelems,'quadr','' !Use elements of first order   
+!(for later mechanic simulations you will   
+!also need second order elements using  
+!'quadr','quad' instead of 'quadr','')  
+ASEL,all            !Select all areas   
+AMESH,all           !Mesh all selected areas
+!!!!---------------------------------- CREATE COMPONENTS ----------------------------------!!!! 
+! CM,name,etype -> creates a component called 'name' of all currently selected  
+! !entities of type 'etype' (can be node, line, area, volume)   
+! create ground electrode   
+ASEL, s, loc, x, 0, r_gnd_electrode 
+ASEL, r, loc, y, 0, material_height 
+CM, gndElectrode, area  
+! create dielectricum   
+ASEL, s, loc, x, 0, r_gnd_electrode 
+ASEL, r, loc, y, material_height, material_height*2 
+CM, dielectricum, area  
+! create middle electrode   
+ASEL, s, loc, x, 0, r_gnd_electrode 
+ASEL, r, loc, y, material_height*2, material_height*3   
+CM, midElectrode, area  
+! create top electrode  
+ASEL, s, loc, x, 0, r_top_electrode 
+ASEL, r, loc, y, material_height*3 + middle_air_height, material_height*4 + middle_air_height   
+CM, topElectrode, area  
+! create air component  
+ASEL,all                      !Select all areas 
+ASEL,u,,,gndElectrode         !Unselect all other components
+ASEL,u,,,midElectrode   
+ASEL,u,,,dielectricum   
+ASEL,u,,,topElectrode   
+CM,air,area 
+!!!!---------------------------------- WRITE OUT MESH ----------------------------------!!!!
+! 1. create regions for all area- and volume-components 
+! REGION,'regionName','compName' -> creates region called regionName
+! !of component compName
+*USE,REGION, 'gndElectrode_region', 'gndElectrode'  
+*USE,REGION, 'midElectrode_region', 'midElectrode'  
+*USE,REGION, 'topElectrode_region', 'topElectrode'  
+*USE,REGION, 'dielectricum_region', 'dielectricum'  
+*USE,REGION, 'airRegion', 'air' 
+! 3. write out model
+*USE,WRITEMODEL, 'assignment1'  

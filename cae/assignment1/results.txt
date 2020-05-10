@@ -1,0 +1,96 @@
+===================================================================
+RESULTS of Assignment 1 - Capacitor
+group7: cae42, cae02, cae03
+===================================================================
+
+___________________________________________________________________
+
+>> Task1 
+   
+   Submitted files:
+   - mesh: assignment1_1.nmf
+   - nacs: assignment1_1.py
+   - screenshots: task1_eleFeildIntensity.jpg, task1_elePotential.jpg
+
+   Questions:
+   - What boundary conditions have to be used to model the electrodes?
+	 
+	 top electrode    -> potential of 50.0 Volts
+	 middle electrode -> equipotential
+	 gnd electrode    -> Ground
+___________________________________________________________________
+
+>> Task2
+   
+   Calculations:
+   
+   - Simulated capacitance:
+     
+     As the capacitance cannot be calculated directly by NACS
+     we have to use the formula: W = 0.5 * C * U^2 to calculate the
+     C indirectly by simulate the total energy in the region
+      
+     # field                                                     # energy(W)
+     assignment1-static-elecEnergy-region-airRegion             6.35177e-12
+     assignment1-static-elecEnergy-region-dielectricum_region   4.77062e-15
+     assignment1-static-elecEnergy-region-gndElectrode_region   0
+     assignment1-static-elecEnergy-region-midElectrode_region   3.79546e-24
+     assignment1-static-elecEnergy-region-topElectrode_region   4.32727e-18
+
+     total                                                      6.356544947273796e-12
+      
+     NOTE: as we can see, most of the energy is in the air,
+     therefore we can simply ignore the energy in the other fields.
+     
+     Therefore the simulated capacitance can be calculated as:
+      
+     C_s = (2 * totalE) / U^2 = 2 * 6.356544947273796e-12 / 2500 = 5.085235957819037e-15 (F)
+     
+   - Analytic capacitance:
+     
+     We used the formula for simple plate capacitors C = e * A/d,
+     For this setup the total capacitor can be seen as two capacitors in serie,
+     so we can use the formula C(total) = C(1)*C(2) / (C(1) + C(2)) to calculate
+     the capacitance using the analytic formula, with the permittivity from the NACS:
+     
+            permittivity:     e(air) = 8.85e-12     e(srtio3) = 2.655e-09
+      
+     C(air) = e(air) * (pi*r^2)/d = 8.85e-12 * (pi * 12e-6 * 12e-6 ) / 1e-6 = 4.0036e-15
+     C(srtio3) = e(srtio3) * (pi*r^2)/d = 2.655e-9 * (pi * 20e-6 * 20e-6 ) / 0.5e-6 = 6.6727e-12
+     C_a = C(air)*C(srtio3) / ( C(air) + C(srtio3) ) =  (4.0036e-15*6.6727e-12)/(6.6727e-12+4.0036e-15) = 4.0012e-15
+	
+   Questions:
+   
+   - Compare the simulated and calculated capacitance. What are the differences and why do they occur?
+     If we compare C_s and C_a we see the simulated result is larger
+     than the calculated result, because the calculated result only cares
+     about the energy between the two electrodes. While in reality,
+     the simulated result also takes the energy in the electric field
+     around the air into account.
+___________________________________________________________________
+
+>> Task3
+
+   Submitted files:
+   - plots: plot1.jpg and plot2.jpg
+
+   Questions:
+   - How do the values of E_max and C change if you decrease the mesh size? Give reasons for the observed behaviour.
+     Looking at plot1.jpg and plot2.jpg we observe that
+     if we decrease the mesh size, the number of simulation nodes increases,
+     and the E-max increases, the C continuously decreases.
+     
+     This means that the more nodes we simulate, the more realistic the
+     simulation can be, that means that the energy will mostly be stored
+     in the electric field around capacitor, which explained the increase in E-max
+     and therefore using the formula in task 2, we can explain why C continuously decreases. 
+     
+___________________________________________________________________
+grades:
+6/7
+Task 1: ansys input script not submitted (-0.5 points)
+Task 3: Reason for increasing E is that the maximum of E is at the tip-node of the upper electrode.
+        However, as E is an element-result it gets always averaged over the nodes of the neighboring element.
+        This means that peaks which appear on nodes get smeared out due to this averaging. The finer the mesh,
+        the weaker this effect becomes, which is the reason why E increases if you decrease the meshsize. (-0.5 points) 
+     

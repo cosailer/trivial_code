@@ -1,0 +1,26 @@
+
+======================================================================
+ N A C S - Numerical Analysis of Coupled Systems
+
+ Version:    2.0.2570 - pre2
+ Build Type: Release
+
+ (c) SIMetris GmbH 2007 - 2014
+======================================================================
+
+++ NACS run started at 2014-Nov-07 18:44:36 on lse87
+
+++ Using license 'nacs_mphs' (NACS Multiphysics Suite) from 'lse11.e-technik.uni-erlangen.de'
+++ Using 1 of 160 computing licenses from 'lse11.e-technik.uni-erlangen.de'
+++ Reading python parameter file 'assignment1.py'
+++ Reading mesh 'task3/assignment13_1.25.nmf'
+++ Creating NACS result writer
+++ Creating Physic 'electrostatic'
+++ Setting up system 
+
+++ NACS run finished at 2014-Nov-07 18:44:37
+
+======================================================================
+ Total time:		 Wall clock: 1 s	 CPU time: 0 s
+======================================================================
+

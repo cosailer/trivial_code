@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+
+<nacsInfo status="finished" infoWriteCounter="6" infoRejectCounter="249" index="1">
+  <summary>
+    <timer wall="7" cpu="6.13" calls="1"/>
+    <!-- Memory is in kB-->
+    <memory final="93148" peak="93148"/>
+  </summary>
+  <header>
+    <environment started="2014-Nov-21 15:37:51" host="lse82" estimatedEnd="2014-Nov-21 15:37:58" remainingTime="0"/>
+    <domain dimensions="2" modelDepth="1" elements="4008" nodes="5005">
+      <regions>
+        <region name="cantilever" id="0" type="volume" regular="yes" hom="yes" nodes="5005" elems="4000" isQuadratic="no"/>
+      </regions>
+      <namedNodes>
+        <nodes name="bot_right" count="1"/>
+        <nodes name="top_right" count="1"/>
+      </namedNodes>
+      <namedElements>
+        <elements name="left_edge" count="4"/>
+        <elements name="right_edge" count="4"/>
+      </namedElements>
+      <boundingBox>
+        <x min="0" max="0.5"/>
+        <y min="0" max="0.01"/>
+      </boundingBox>
+      <coordinateSystems/>
+      <coordinateSystems/>
+    </domain>
+    <progOpts problem="cant_linear_1000.25" parameterFile="/home/userHome/stud/cae03/cae/assignment2/task3/cant_linear_1000.25.py" meshFile="" errorLevel="1" numCores="1" logLevel="2" isRestarted="false" license="nacs_mphs" workDir="/home/userHome/stud/cae03/cae/assignment2/task3" user="cae03" pid="28363" binary="/home/shareAll/linux_bin/nacs/nacs2-pre3/bin/../bin/lin64/nacsbin">
+      <!-- values of command line parameters (including defaults)-->
+      <nacs version="2.0.2745 - pre3" build="Release" svn_revision="2745"/>
+    </progOpts>
+  </header>
+  <sequenceStep>
+    <!-- === SEQUENCE STEP ===-->
+    <transient>
+      <header unit="s"/>
+      <process>
+        <step analysis_id="1" step="1" value="0.0001982"/>
+        <step analysis_id="2" step="2" value="0.0003964" timePerStep="0"/>
+        <step analysis_id="3" step="3" value="0.0005946" timePerStep="0"/>
+        <step analysis_id="4" step="4" value="0.0007928" timePerStep="0"/>
+        <step analysis_id="5" step="5" value="0.000991" timePerStep="0"/>
+        <step analysis_id="6" step="6" value="0.0011892" timePerStep="0"/>
+        <step analysis_id="7" step="7" value="0.0013874" timePerStep="0"/>
+        <step analysis_id="8" step="8" value="0.0015856" timePerStep="0"/>
+        <step analysis_id="9" step="9" value="0.0017838" timePerStep="0"/>
+        <step analysis_id="10" step="10" value="0.001982" timePerStep="0"/>
+        <step analysis_id="11" step="11" value="0.0021802" timePerStep="0"/>
+        <step analysis_id="12" step="12" value="0.0023784" timePerStep="0"/>
+        <step analysis_id="13" step="13" value="0.0025766" timePerStep="0"/>
+        <step analysis_id="14" step="14" value="0.0027748" timePerStep="0"/>
+        <step analysis_id="15" step="15" value="0.002973" timePerStep="0"/>
+        <step analysis_id="16" step="16" value="0.0031712" timePerStep="0.066667"/>
+        <step analysis_id="17" step="17" value="0.0033694" timePerStep="0.0625"/>
+        <step analysis_id="18" step="18" value="0.0035676" timePerStep="0.058824"/>
+        <step analysis_id="19" step="19" value="0.0037658" timePerStep="0.055556"/>
+        <step analysis_id="20" step="20" value="0.003964" timePerStep="0.052632"/>
+        <step analysis_id="21" step="21" value="0.0041622" timePerStep="0.05"/>
+        <step analysis_id="22" step="22" value="0.0043604" timePerStep="0.047619"/>
+        <step analysis_id="23" step="23" value="0.0045586" timePerStep="0.045455"/>
+        <step analysis_id="24" step="24" value="0.0047568" timePerStep="0.043478"/>
+        <step analysis_id="25" step="25" value="0.004955" timePerStep="0.041667"/>
+        <step analysis_id="26" step="26" value="0.0051532" timePerStep="0.04"/>
+        <step analysis_id="27" step="27" value="0.0053514" timePerStep="0.038462"/>
+        <step analysis_id="28" step="28" value="0.0055496" timePerStep="0.037037"/>
+        <step analysis_id="29" step="29" value="0.0057478" timePerStep="0.035714"/>
+        <step analysis_id="30" step="30" value="0.005946" timePerStep="0.034483"/>
+        <step analysis_id="31" step="31" value="0.0061442" timePerStep="0.033333"/>
+        <step analysis_id="32" step="32" value="0.0063424" timePerStep="0.032258"/>
+        <step analysis_id="33" step="33" value="0.0065406" timePerStep="0.03125"/>
+        <step analysis_id="34" step="34" value="0.0067388" timePerStep="0.030303"/>
+        <step analysis_id="35" step="35" value="0.006937" timePerStep="0.029412"/>
+        <step analysis_id="36" step="36" value="0.0071352" timePerStep="0.028571"/>
+        <step analysis_id="37" step="37" value="0.0073334" timePerStep="0.027778"/>
+        <step analysis_id="38" step="38" value="0.0075316" timePerStep="0.027027"/>
+        <step analysis_id="39" step="39" value="0.0077298" timePerStep="0.026316"/>
+        <step analysis_id="40" step="40" value="0.007928" timePerStep="0.025641"/>
+        <step analysis_id="41" step="41" value="0.0081262" timePerStep="0.025"/>
+        <step analysis_id="42" step="42" value="0.0083244" timePerStep="0.02439"/>
+        <step analysis_id="43" step="43" value="0.0085226" timePerStep="0.02381"/>
+        <step analysis_id="44" step="44" value="0.0087208" timePerStep="0.023256"/>
+        <step analysis_id="45" step="45" value="0.008919" timePerStep="0.022727"/>
+        <step analysis_id="46" step="46" value="0.0091172" timePerStep="0.022222"/>
+        <step analysis_id="47" step="47" value="0.0093154" timePerStep="0.021739"/>
+        <step analysis_id="48" step="48" value="0.0095136" timePerStep="0.021277"/>
+        <step analysis_id="49" step="49" value="0.0097118" timePerStep="0.020833"/>
+        <step analysis_id="50" step="50" value="0.00991" timePerStep="0.020408"/>
+        <step analysis_id="51" step="51" value="0.010108" timePerStep="0.02"/>
+        <step analysis_id="52" step="52" value="0.010306" timePerStep="0.019608"/>
+        <step analysis_id="53" step="53" value="0.010505" timePerStep="0.019231"/>
+        <step analysis_id="54" step="54" value="0.010703" timePerStep="0.018868"/>
+        <step analysis_id="55" step="55" value="0.010901" timePerStep="0.018519"/>
+        <step analysis_id="56" step="56" value="0.011099" timePerStep="0.018182"/>
+        <step analysis_id="57" step="57" value="0.011297" timePerStep="0.017857"/>
+        <step analysis_id="58" step="58" value="0.011496" timePerStep="0.017544"/>
+        <step analysis_id="59" step="59" value="0.011694" timePerStep="0.017241"/>
+        <step analysis_id="60" step="60" value="0.011892" timePerStep="0.033898"/>
+        <step analysis_id="61" step="61" value="0.01209" timePerStep="0.033333"/>
+        <step analysis_id="62" step="62" value="0.012288" timePerStep="0.032787"/>
+        <step analysis_id="63" step="63" value="0.012487" timePerStep="0.032258"/>
+        <step analysis_id="64" step="64" value="0.012685" timePerStep="0.031746"/>
+        <step analysis_id="65" step="65" value="0.012883" timePerStep="0.03125"/>
+        <step analysis_id="66" step="66" value="0.013081" timePerStep="0.030769"/>
+        <step analysis_id="67" step="67" value="0.013279" timePerStep="0.030303"/>
+        <step analysis_id="68" step="68" value="0.013478" timePerStep="0.029851"/>
+        <step analysis_id="69" step="69" value="0.013676" timePerStep="0.029412"/>
+        <step analysis_id="70" step="70" value="0.013874" timePerStep="0.028986"/>
+        <step analysis_id="71" step="71" value="0.014072" timePerStep="0.028571"/>
+        <step analysis_id="72" step="72" value="0.01427" timePerStep="0.028169"/>
+        <step analysis_id="73" step="73" value="0.014469" timePerStep="0.027778"/>
+        <step analysis_id="74" step="74" value="0.014667" timePerStep="0.027397"/>
+        <step analysis_id="75" step="75" value="0.014865" timePerStep="0.027027"/>
+        <step analysis_id="76" step="76" value="0.015063" timePerStep="0.026667"/>
+        <step analysis_id="77" step="77" value="0.015261" timePerStep="0.026316"/>
+        <step analysis_id="78" step="78" value="0.01546" timePerStep="0.025974"/>
+        <step analysis_id="79" step="79" value="0.015658" timePerStep="0.025641"/>
+        <step analysis_id="80" step="80" value="0.015856" timePerStep="0.025316"/>
+        <step analysis_id="81" step="81" value="0.016054" timePerStep="0.025"/>
+        <step analysis_id="82" step="82" value="0.016252" timePerStep="0.024691"/>
+        <step analysis_id="83" step="83" value="0.016451" timePerStep="0.02439"/>
+        <step analysis_id="84" step="84" value="0.016649" timePerStep="0.024096"/>
+        <step analysis_id="85" step="85" value="0.016847" timePerStep="0.02381"/>
+        <step analysis_id="86" step="86" value="0.017045" timePerStep="0.023529"/>
+        <step analysis_id="87" step="87" value="0.017243" timePerStep="0.023256"/>
+        <step analysis_id="88" step="88" value="0.017442" timePerStep="0.022989"/>
+        <step analysis_id="89" step="89" value="0.01764" timePerStep="0.022727"/>
+        <step analysis_id="90" step="90" value="0.017838" timePerStep="0.022472"/>
+        <step analysis_id="91" step="91" value="0.018036" timePerStep="0.022222"/>
+        <step analysis_id="92" step="92" value="0.018234" timePerStep="0.021978"/>
+        <step analysis_id="93" step="93" value="0.018433" timePerStep="0.021739"/>
+        <step analysis_id="94" step="94" value="0.018631" timePerStep="0.021505"/>
+        <step analysis_id="95" step="95" value="0.018829" timePerStep="0.021277"/>
+        <step analysis_id="96" step="96" value="0.019027" timePerStep="0.021053"/>
+        <step analysis_id="97" step="97" value="0.019225" timePerStep="0.020833"/>
+        <step analysis_id="98" step="98" value="0.019424" timePerStep="0.020619"/>
+        <step analysis_id="99" step="99" value="0.019622" timePerStep="0.020408"/>
+        <step analysis_id="100" step="100" value="0.01982" timePerStep="0.020202"/>
+        <step analysis_id="101" step="101" value="0.020018" timePerStep="0.02"/>
+        <step analysis_id="102" step="102" value="0.020216" timePerStep="0.019802"/>
+        <step analysis_id="103" step="103" value="0.020415" timePerStep="0.019608"/>
+        <step analysis_id="104" step="104" value="0.020613" timePerStep="0.019417"/>
+        <step analysis_id="105" step="105" value="0.020811" timePerStep="0.028846"/>
+        <step analysis_id="106" step="106" value="0.021009" timePerStep="0.028571"/>
+        <step analysis_id="107" step="107" value="0.021207" timePerStep="0.028302"/>
+        <step analysis_id="108" step="108" value="0.021406" timePerStep="0.028037"/>
+        <step analysis_id="109" step="109" value="0.021604" timePerStep="0.027778"/>
+        <step analysis_id="110" step="110" value="0.021802" timePerStep="0.027523"/>
+        <step analysis_id="111" step="111" value="0.022" timePerStep="0.027273"/>
+        <step analysis_id="112" step="112" value="0.022198" timePerStep="0.027027"/>
+        <step analysis_id="113" step="113" value="0.022397" timePerStep="0.026786"/>
+        <step analysis_id="114" step="114" value="0.022595" timePerStep="0.026549"/>
+        <step analysis_id="115" step="115" value="0.022793" timePerStep="0.026316"/>
+        <step analysis_id="116" step="116" value="0.022991" timePerStep="0.026087"/>
+        <step analysis_id="117" step="117" value="0.023189" timePerStep="0.025862"/>
+        <step analysis_id="118" step="118" value="0.023388" timePerStep="0.025641"/>
+        <step analysis_id="119" step="119" value="0.023586" timePerStep="0.025424"/>
+        <step analysis_id="120" step="120" value="0.023784" timePerStep="0.02521"/>
+        <step analysis_id="121" step="121" value="0.023982" timePerStep="0.025"/>
+        <step analysis_id="122" step="122" value="0.02418" timePerStep="0.024793"/>
+        <step analysis_id="123" step="123" value="0.024379" timePerStep="0.02459"/>
+        <step analysis_id="124" step="124" value="0.024577" timePerStep="0.02439"/>
+        <step analysis_id="125" step="125" value="0.024775" timePerStep="0.024194"/>
+        <step analysis_id="126" step="126" value="0.024973" timePerStep="0.024"/>
+        <step analysis_id="127" step="127" value="0.025171" timePerStep="0.02381"/>
+        <step analysis_id="128" step="128" value="0.02537" timePerStep="0.023622"/>
+        <step analysis_id="129" step="129" value="0.025568" timePerStep="0.023438"/>
+        <step analysis_id="130" step="130" value="0.025766" timePerStep="0.023256"/>
+        <step analysis_id="131" step="131" value="0.025964" timePerStep="0.023077"/>
+        <step analysis_id="132" step="132" value="0.026162" timePerStep="0.022901"/>
+        <step analysis_id="133" step="133" value="0.026361" timePerStep="0.022727"/>
+        <step analysis_id="134" step="134" value="0.026559" timePerStep="0.022556"/>
+        <step analysis_id="135" step="135" value="0.026757" timePerStep="0.022388"/>
+        <step analysis_id="136" step="136" value="0.026955" timePerStep="0.022222"/>
+        <step analysis_id="137" step="137" value="0.027153" timePerStep="0.022059"/>
+        <step analysis_id="138" step="138" value="0.027352" timePerStep="0.021898"/>
+        <step analysis_id="139" step="139" value="0.02755" timePerStep="0.021739"/>
+        <step analysis_id="140" step="140" value="0.027748" timePerStep="0.021583"/>
+        <step analysis_id="141" step="141" value="0.027946" timePerStep="0.021429"/>
+        <step analysis_id="142" step="142" value="0.028144" timePerStep="0.021277"/>
+        <step analysis_id="143" step="143" value="0.028343" timePerStep="0.021127"/>
+        <step analysis_id="144" step="144" value="0.028541" timePerStep="0.020979"/>
+        <step analysis_id="145" step="145" value="0.028739" timePerStep="0.020833"/>
+        <step analysis_id="146" step="146" value="0.028937" timePerStep="0.02069"/>
+        <step analysis_id="147" step="147" value="0.029135" timePerStep="0.027397"/>
+        <step analysis_id="148" step="148" value="0.029334" timePerStep="0.027211"/>
+        <step analysis_id="149" step="149" value="0.029532" timePerStep="0.027027"/>
+        <step analysis_id="150" step="150" value="0.02973" timePerStep="0.026846"/>
+        <step analysis_id="151" step="151" value="0.029928" timePerStep="0.026667"/>
+        <step analysis_id="152" step="152" value="0.030126" timePerStep="0.02649"/>
+        <step analysis_id="153" step="153" value="0.030325" timePerStep="0.026316"/>
+        <step analysis_id="154" step="154" value="0.030523" timePerStep="0.026144"/>
+        <step analysis_id="155" step="155" value="0.030721" timePerStep="0.025974"/>
+        <step analysis_id="156" step="156" value="0.030919" timePerStep="0.025806"/>
+        <step analysis_id="157" step="157" value="0.031117" timePerStep="0.025641"/>
+        <step analysis_id="158" step="158" value="0.031316" timePerStep="0.025478"/>
+        <step analysis_id="159" step="159" value="0.031514" timePerStep="0.025316"/>
+        <step analysis_id="160" step="160" value="0.031712" timePerStep="0.025157"/>
+        <step analysis_id="161" step="161" value="0.03191" timePerStep="0.025"/>
+        <step analysis_id="162" step="162" value="0.032108" timePerStep="0.024845"/>
+        <step analysis_id="163" step="163" value="0.032307" timePerStep="0.024691"/>
+        <step analysis_id="164" step="164" value="0.032505" timePerStep="0.02454"/>
+        <step analysis_id="165" step="165" value="0.032703" timePerStep="0.02439"/>
+        <step analysis_id="166" step="166" value="0.032901" timePerStep="0.024242"/>
+        <step analysis_id="167" step="167" value="0.033099" timePerStep="0.024096"/>
+        <step analysis_id="168" step="168" value="0.033298" timePerStep="0.023952"/>
+        <step analysis_id="169" step="169" value="0.033496" timePerStep="0.02381"/>
+        <step analysis_id="170" step="170" value="0.033694" timePerStep="0.023669"/>
+        <step analysis_id="171" step="171" value="0.033892" timePerStep="0.023529"/>
+        <step analysis_id="172" step="172" value="0.03409" timePerStep="0.023392"/>
+        <step analysis_id="173" step="173" value="0.034289" timePerStep="0.023256"/>
+        <step analysis_id="174" step="174" value="0.034487" timePerStep="0.023121"/>
+        <step analysis_id="175" step="175" value="0.034685" timePerStep="0.022989"/>
+        <step analysis_id="176" step="176" value="0.034883" timePerStep="0.022857"/>
+        <step analysis_id="177" step="177" value="0.035081" timePerStep="0.022727"/>
+        <step analysis_id="178" step="178" value="0.03528" timePerStep="0.022599"/>
+        <step analysis_id="179" step="179" value="0.035478" timePerStep="0.022472"/>
+        <step analysis_id="180" step="180" value="0.035676" timePerStep="0.022346"/>
+        <step analysis_id="181" step="181" value="0.035874" timePerStep="0.022222"/>
+        <step analysis_id="182" step="182" value="0.036072" timePerStep="0.022099"/>
+        <step analysis_id="183" step="183" value="0.036271" timePerStep="0.021978"/>
+        <step analysis_id="184" step="184" value="0.036469" timePerStep="0.021858"/>
+        <step analysis_id="185" step="185" value="0.036667" timePerStep="0.021739"/>
+        <step analysis_id="186" step="186" value="0.036865" timePerStep="0.021622"/>
+        <step analysis_id="187" step="187" value="0.037063" timePerStep="0.021505"/>
+        <step analysis_id="188" step="188" value="0.037262" timePerStep="0.02139"/>
+        <step analysis_id="189" step="189" value="0.03746" timePerStep="0.021277"/>
+        <step analysis_id="190" step="190" value="0.037658" timePerStep="0.026455"/>
+        <step analysis_id="191" step="191" value="0.037856" timePerStep="0.026316"/>
+        <step analysis_id="192" step="192" value="0.038054" timePerStep="0.026178"/>
+        <step analysis_id="193" step="193" value="0.038253" timePerStep="0.026042"/>
+        <step analysis_id="194" step="194" value="0.038451" timePerStep="0.025907"/>
+        <step analysis_id="195" step="195" value="0.038649" timePerStep="0.025773"/>
+        <step analysis_id="196" step="196" value="0.038847" timePerStep="0.025641"/>
+        <step analysis_id="197" step="197" value="0.039045" timePerStep="0.02551"/>
+        <step analysis_id="198" step="198" value="0.039244" timePerStep="0.025381"/>
+        <step analysis_id="199" step="199" value="0.039442" timePerStep="0.025253"/>
+        <step analysis_id="200" step="200" value="0.03964" timePerStep="0.025126"/>
+        <step analysis_id="201" step="201" value="0.039838" timePerStep="0.025"/>
+        <step analysis_id="202" step="202" value="0.040036" timePerStep="0.024876"/>
+        <step analysis_id="203" step="203" value="0.040235" timePerStep="0.024752"/>
+        <step analysis_id="204" step="204" value="0.040433" timePerStep="0.024631"/>
+        <step analysis_id="205" step="205" value="0.040631" timePerStep="0.02451"/>
+        <step analysis_id="206" step="206" value="0.040829" timePerStep="0.02439"/>
+        <step analysis_id="207" step="207" value="0.041027" timePerStep="0.024272"/>
+        <step analysis_id="208" step="208" value="0.041226" timePerStep="0.024155"/>
+        <step analysis_id="209" step="209" value="0.041424" timePerStep="0.024038"/>
+        <step analysis_id="210" step="210" value="0.041622" timePerStep="0.023923"/>
+        <step analysis_id="211" step="211" value="0.04182" timePerStep="0.02381"/>
+        <step analysis_id="212" step="212" value="0.042018" timePerStep="0.023697"/>
+        <step analysis_id="213" step="213" value="0.042217" timePerStep="0.023585"/>
+        <step analysis_id="214" step="214" value="0.042415" timePerStep="0.023474"/>
+        <step analysis_id="215" step="215" value="0.042613" timePerStep="0.023364"/>
+        <step analysis_id="216" step="216" value="0.042811" timePerStep="0.023256"/>
+        <step analysis_id="217" step="217" value="0.043009" timePerStep="0.023148"/>
+        <step analysis_id="218" step="218" value="0.043208" timePerStep="0.023041"/>
+        <step analysis_id="219" step="219" value="0.043406" timePerStep="0.022936"/>
+        <step analysis_id="220" step="220" value="0.043604" timePerStep="0.022831"/>
+        <step analysis_id="221" step="221" value="0.043802" timePerStep="0.022727"/>
+        <step analysis_id="222" step="222" value="0.044" timePerStep="0.022624"/>
+        <step analysis_id="223" step="223" value="0.044199" timePerStep="0.022523"/>
+        <step analysis_id="224" step="224" value="0.044397" timePerStep="0.022422"/>
+        <step analysis_id="225" step="225" value="0.044595" timePerStep="0.022321"/>
+        <step analysis_id="226" step="226" value="0.044793" timePerStep="0.022222"/>
+        <step analysis_id="227" step="227" value="0.044991" timePerStep="0.022124"/>
+        <step analysis_id="228" step="228" value="0.04519" timePerStep="0.022026"/>
+        <step analysis_id="229" step="229" value="0.045388" timePerStep="0.02193"/>
+        <step analysis_id="230" step="230" value="0.045586" timePerStep="0.021834"/>
+        <step analysis_id="231" step="231" value="0.045784" timePerStep="0.026087"/>
+        <step analysis_id="232" step="232" value="0.045982" timePerStep="0.025974"/>
+        <step analysis_id="233" step="233" value="0.046181" timePerStep="0.025862"/>
+        <step analysis_id="234" step="234" value="0.046379" timePerStep="0.025751"/>
+        <step analysis_id="235" step="235" value="0.046577" timePerStep="0.025641"/>
+        <step analysis_id="236" step="236" value="0.046775" timePerStep="0.025532"/>
+        <step analysis_id="237" step="237" value="0.046973" timePerStep="0.025424"/>
+        <step analysis_id="238" step="238" value="0.047172" timePerStep="0.025316"/>
+        <step analysis_id="239" step="239" value="0.04737" timePerStep="0.02521"/>
+        <step analysis_id="240" step="240" value="0.047568" timePerStep="0.025105"/>
+        <step analysis_id="241" step="241" value="0.047766" timePerStep="0.025"/>
+        <step analysis_id="242" step="242" value="0.047964" timePerStep="0.024896"/>
+        <step analysis_id="243" step="243" value="0.048163" timePerStep="0.024793"/>
+        <step analysis_id="244" step="244" value="0.048361" timePerStep="0.024691"/>
+        <step analysis_id="245" step="245" value="0.048559" timePerStep="0.02459"/>
+        <step analysis_id="246" step="246" value="0.048757" timePerStep="0.02449"/>
+        <step analysis_id="247" step="247" value="0.048955" timePerStep="0.02439"/>
+        <step analysis_id="248" step="248" value="0.049154" timePerStep="0.024291"/>
+        <step analysis_id="249" step="249" value="0.049352" timePerStep="0.024194"/>
+        <step analysis_id="250" step="250" value="0.04955" timePerStep="0.024096"/>
+      </process>
+    </transient>
+    <PDE>
+      <mechanic>
+        <header>
+          <region name="cantilever" damping="none"/>
+          <integrators>
+            <matrixBiLinearForms>
+              <bilinearForm integrator="LinElastInt" region="cantilever">
+                <row pde="mechanic" functionId="0" result="mechDisplacement"/>
+                <column pde="mechanic" functionId="0" result="mechDisplacement"/>
+                <destination feMatrix="stiffness" feMatrixMapped="stiffness" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="no"/>
+              </bilinearForm>
+              <bilinearForm integrator="MassInt" region="cantilever">
+                <row pde="mechanic" functionId="0" result="mechDisplacement"/>
+                <column pde="mechanic" functionId="0" result="mechDisplacement"/>
+                <destination feMatrix="mass" feMatrixMapped="mass" feSecondMatrix="none" feSecondMatrixFac="0.0  "/>
+                <attributes entryType="RealPart" counterPart="no" symmetric="yes" solutionDependent="no" updatedGeo="no"/>
+              </bilinearForm>
+            </matrixBiLinearForms>
+            <rhsLinearForms>
+              <linearForm integrator="NodalForceInt" region="">
+                <row result="mechDisplacement" solutionDependent="no"/>
+              </linearForm>
+            </rhsLinearForms>
+          </integrators>
+        </header>
+        <material name="Steel">
+          <regionList>
+            <region name="cantilever"/>
+          </regionList>
+          <property name="MechanicStiffnessTensor">
+            <tensor dim1="6" dim2="6">
+              <complex> (2.4929e+11,0) (9.6946e+10,0) (9.6946e+10,0) (0,0) (0,0) (0,0) 
+(9.6946e+10,0) (2.4929e+11,0) (9.6946e+10,0) (0,0) (0,0) (0,0) 
+(9.6946e+10,0) (9.6946e+10,0) (2.4929e+11,0) (0,0) (0,0) (0,0) 
+(0,0) (0,0) (0,0) (7.61719e+10,0) (0,0) (0,0) 
+(0,0) (0,0) (0,0) (0,0) (7.61719e+10,0) (0,0) 
+(0,0) (0,0) (0,0) (0,0) (0,0) (7.61719e+10,0)
+</complex>
+
+            </tensor>
+          </property>
+          <property name="Mechanic_E_Modulus" value="(1.95e+11,0)"/>
+          <property name="Mechanic_PoissonRatio" value="(0.28,0)"/>
+          <property name="Density" value="(7850,0)"/>
+          <property name="Rayleigh_Frequency" real="1000"/>
+          <property name="Loss_TangensDelta" real="0.0003"/>
+          <axisMapping coordSysId="default">
+            <axis1 dir="z" factor="1"/>
+            <axis2 dir="x" factor="1"/>
+            <rotationMatrix dim1="3" dim2="3">
+              <real>
+                 0.000000e+00  0.000000e+00  1.000000e+00
+                 1.000000e+00  0.000000e+00  0.000000e+00
+                 0.000000e+00  1.000000e+00  0.000000e+00
+              </real>
+            </rotationMatrix>
+          </axisMapping>
+        </material>
+        <damping/>
+        <!-- List of defined Spaces-->
+        <feSpaces>
+          <mechDisplacement>
+            <h1Nodal>
+              <regionList>
+                <cantilever/>
+                <default order="1"/>
+              </regionList>
+            </h1Nodal>
+          </mechDisplacement>
+        </feSpaces>
+        <timeStepping>
+          <newmark formulation="implicit" effectiveMatrix="stiffness" beta="0.25" gamma="0.5"/>
+        </timeStepping>
+        <feFunctions>
+          <mechDisplacement>
+            <bcsAndLoads>
+              <force name="top_right" value="0.0, -5*sinBurst(201.82, 3, 1, 1 ,t)" dofs="x, y">
+                <entities/>
+              </force>
+            </bcsAndLoads>
+            <homDirichletBC>
+              <surfElemList name="left_edge" dofs="x y"/>
+            </homDirichletBC>
+            <inhomDirichletBC/>
+          </mechDisplacement>
+        </feFunctions>
+      </mechanic>
+    </PDE>
+    <OLAS>
+      <mechanic>
+        <setup idbcHandling="elimination" staticCondensation="no">
+          <!-- List of registered FeFunctions-->
+          <feFunctions totalNumEqns="10000" totalNumFreeEqns="10000" totalNumDirichlet="0">
+            <function id="0" name="mechDisplacement" numEqns="10000" lastFreeEqn="10000" numDirichlet="0">
+              <usedInBlocks>
+                <block id="0"/>
+              </usedInBlocks>
+            </function>
+          </feFunctions>
+          <!-- List of SBM-blocks-->
+          <sbmBlocks>
+            <block id="0" size="10000" lastFreeIndex="10000"/>
+          </sbmBlocks>
+          <!-- Time stepping information-->
+          <timeStepping isImplicitExplicit="no"/>
+          <setupTime wall="0" cpu="0.08" calls="1"/>
+          <!-- List of defined matrices-->
+          <matrices>
+            <!-- Memory is in MByte-->
+            <system totalNumRows="10000" totalNumCols="10000" totalNumNonZeros="155896" totalFillLevelPerCent="0.1559" totalMemory="1.1894">
+              <matrix blockRow="0" blockCol="0" storageType="sparseSym" sharedPattern="yes" numRows="10000" numCols="10000" numNonZeros="155896" fillLevelPerCent="0.1559" memory="1.1894" upperBandWidth="9929" lowerBandWidth="9929" avgBandWidth="6619" symCounterPart="no" orderingType="noReordering"/>
+            </system>
+            <stiffness totalNumRows="10000" totalNumCols="10000" totalNumNonZeros="155896" totalFillLevelPerCent="0.1559" totalMemory="1.1894">
+              <matrix blockRow="0" blockCol="0" storageType="sparseSym" sharedPattern="yes" numRows="10000" numCols="10000" numNonZeros="155896" fillLevelPerCent="0.1559" memory="1.1894" upperBandWidth="9929" lowerBandWidth="9929" avgBandWidth="0" symCounterPart="no" orderingType="noReordering"/>
+            </stiffness>
+            <mass totalNumRows="10000" totalNumCols="10000" totalNumNonZeros="155896" totalFillLevelPerCent="0.1559" totalMemory="1.1894">
+              <matrix blockRow="0" blockCol="0" storageType="sparseSym" sharedPattern="yes" numRows="10000" numCols="10000" numNonZeros="155896" fillLevelPerCent="0.1559" memory="1.1894" upperBandWidth="9929" lowerBandWidth="9929" avgBandWidth="0" symCounterPart="no" orderingType="noReordering"/>
+            </mass>
+          </matrices>
+        </setup>
+        <solver>
+          <pardiso numThreads="1">
+            <summary>
+              <setup>
+                <timer wall="0" cpu="0.08" calls="1"/>
+              </setup>
+              <solve>
+                <timer wall="0" cpu="3.52" calls="250"/>
+              </solve>
+            </summary>
+            <process>
+              <solver numIter="-1" finalNorm="-1"/>
+            </process>
+          </pardiso>
+        </solver>
+        <precond>
+          <idPrecond>
+            <summary>
+              <setup>
+                <timer wall="0" cpu="0" calls="1"/>
+              </setup>
+              <precond>
+                <timer wall="0" cpu="0" calls="0"/>
+              </precond>
+            </summary>
+          </idPrecond>
+        </precond>
+        <process>
+          <solver solutionIsOkay="yes"/>
+        </process>
+      </mechanic>
+    </OLAS>
+    <analysis>
+      <summary>
+        <assemble>
+          <timer wall="0" cpu="0.08" calls="250"/>
+        </assemble>
+      </summary>
+    </analysis>
+  </sequenceStep>
+</nacsInfo>

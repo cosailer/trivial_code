@@ -1,0 +1,5 @@
+Questions:
+
+1) By increasing the elements in the x-direction we get closer to the calculated result. Having small number of elements in the x-direction leads to big difference between the harmonic behavior and the calculated result.
+
+2) Using quadratic elements instead of linear elements changes the accuracy of the simulated harmonic behaviour with respect to the calculated result.

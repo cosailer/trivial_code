@@ -1,0 +1,33 @@
+
+>> energy output
+
+assignment1-static-elecEnergy-region-airRegion             6.35177e-12
+assignment1-static-elecEnergy-region-dielectricum_region   4.77062e-15
+assignment1-static-elecEnergy-region-gndElectrode_region   0
+assignment1-static-elecEnergy-region-midElectrode_region   3.79546e-24
+assignment1-static-elecEnergy-region-topElectrode_region   4.32727e-18
+
+total                                                      6.356544947273796e-12
+
+C = (2 * totalE) / U^2 = 2 * 6.356544947273796e-12 / 2500 = 5.085235957819037e-15
+
+
+permittivity
+
+air       8.85e-12
+aluminum  0.0885
+srtio3    2.655e-09
+
+
+C(air) = e(air) * (pi*r^2)/d = 8.85e-12 * (pi * 12e-6 * 12e-6 ) / 1e-6 = 4.0036e-15
+
+C(srtio3) = e(srtio3) * (pi*r^2)/d = 2.655e-9 * (pi * 20e-6 * 20e-6 ) / 0.5e-6 = 6.6727e-12
+
+C(total) = C(air)*C(srtio3) / C(air) + C(srtio3) =  (4.0036e-15*6.6727e-12)/(6.6727e-12+4.0036e-15) = 4.0012e-15
+
+
+
+>> the simulated result is larger than the calculated result, because the calculated result only takes
+   account the energy between the two electrodes. While in reality, the simulated result also takes the
+   energy around the air into account.
+

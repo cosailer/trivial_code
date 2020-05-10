@@ -1,0 +1,206 @@
+!!!! ---------------------------------- HEADER ----------------------------------!!!!
+FINI     !Exits all old scripts
+/CLEAR   !Clears workspace
+/PREP7   !Starts command interface
+NACSINIT !Starts NACS interface
+
+!!!! ---------------------------------- PARAMETER ----------------------------------!!!!
+
+a = 1e-6
+d = 25*a
+l = 15e-6
+
+h = a/10
+
+dx = 1e-7  ! used mesh size
+tol = dx/5  ! selection tolerance
+
+! type of elements ( '' for 1 st order , ' quad ' for 2 nd order )
+elemMode = ''
+
+!!!! ---------------------------------- create helper variables ----------------------------------!!!!
+
+! si
+si_x1 = 0
+si_y1 = 0
+
+si_x2 = 26*a+2*l
+si_y2 = d+h
+
+si_x3 = 0
+si_y3 = d+h
+
+si_x4 = 26*a+2*l
+si_y4 = 0
+
+!!!! ---------------------------------- CREATE GEOMETRY ----------------------------------!!!!
+
+! sensitive coating
+rectng , 8*a+l , 18*a+l , d , d+h
+
+! silicon
+rectng , 0 , 26*a+2*l , 0 , d
+
+! excitation fingers
+rectng , l , a+l , d , d+h
+rectng , 2*a+l , 3*a+l , d , d+h
+rectng , 4*a+l , 5*a+l , d , d+h
+rectng , 6*a+l , 7*a+l , d , d+h
+
+! reception fingers
+rectng , 19*a+l , 20*a+l , d , d+h
+rectng , 21*a+l , 22*a+l , d , d+h
+rectng , 23*a+l , 24*a+l , d , d+h
+rectng , 25*a+l , 26*a+l , d , d+h
+
+! connect areas
+asel , all
+aglue , all
+
+!!!!---------------------------------- CREATE COMPONENTS ----------------------------------!!!!
+
+
+! sensitive coating
+asel ,s , loc ,x , 8*a+l ,  18*a+l
+asel ,r , loc ,y , d , d+h
+cm , sen_coat , area
+
+! silicon
+asel ,s , loc ,x , si_x1 ,  si_x2
+asel ,r , loc ,y , 0 ,  d
+cm , silicon , area
+
+! excitation fingers
+! f1
+asel ,s , loc ,x , l , l+a
+asel ,r , loc ,y , d , d+h
+cm , exc_f1 , area
+
+! f2
+asel ,s , loc ,x , 2*a+l , 3*a+l
+asel ,r , loc ,y , d , d+h
+cm , exc_f2 , area
+
+! f3
+asel ,s , loc ,x , 4*a+l ,  5*a+l
+asel ,r , loc ,y , d , d+h
+cm , exc_f3 , area 
+
+! f4
+asel ,s , loc ,x , 6*a+l ,  7*a+l
+asel ,r , loc ,y , d , d+h
+cm , exc_f4 , area
+
+
+
+! reception fingers
+! f1
+asel ,s , loc ,x , 19*a+l , 20*a+l
+asel ,r , loc ,y , d , d+h
+cm , rec_f1 , area
+
+! f2
+asel ,s , loc ,x , 21*a+l , 22*a+l
+asel ,r , loc ,y , d , d+h
+cm , rec_f2 , area
+
+! f3
+asel ,s , loc ,x , 23*a+l ,  24*a+l
+asel ,r , loc ,y , d , d+h
+cm , rec_f3 , area 
+
+! f4
+asel ,s , loc ,x , 25*a+l ,  26*a+l
+asel ,r , loc ,y , d , d+h
+cm , rec_f4 , area
+
+
+! define outer boundaries
+lsel ,s , loc ,x , si_x1-tol , si_x3+tol
+lsel ,r , loc ,y , si_y1 , si_y3
+cm , outerbounds_left , line
+
+lsel ,s , loc ,x , si_x4-tol, si_x2+tol
+lsel ,r , loc ,y , si_y4-tol , si_y2
+cm , outerbounds_right , line
+
+lsel ,s , loc ,x , si_x1 , si_x4 
+lsel ,r , loc ,y , si_y1-tol , si_y4+tol
+cm , outerbounds_bot , line
+
+! the line between figners and substrate
+lsel ,s , loc ,x , si_x3 , si_x2
+lsel ,r , loc ,y , d-tol , d+tol
+cm , surface_line , line
+
+
+!!!! ---------------------------------- SETUP MESH ----------------------------------!!!!
+
+! assign line size
+cmsel, s, surface_line
+lesize, all, dx
+
+lsel, all
+lesize, all, 3*dx
+
+! area mesh
+setelems , 'quadr' , elemMode
+asel , all
+amesh , all
+
+
+!!!! ---------------------------------- Regions ----------------------------------!!!!
+
+
+! create a observer point 1
+nsel, s, loc, x, 19.5*a+l-tol, 19.5*a+l+tol
+nsel, r, loc, y, d-tol, d+tol
+cm, observer_point_1, node
+
+! create a observer point 2
+nsel, s, loc, x, 21.5*a+l-tol, 21.5*a+l+tol
+nsel, r, loc, y, d-tol, d+tol
+cm, observer_point_2, node
+
+! create a observer point 3
+nsel, s, loc, x, 23.5*a+l-tol, 23.5*a+l+tol
+nsel, r, loc, y, d-tol, d+tol
+cm, observer_point_3, node
+
+! create a observer point 4
+nsel, s, loc, x, 25.5*a+l-tol, 25.5*a+l+tol
+nsel, r, loc, y, d-tol, d+tol
+cm, observer_point_4, node
+
+! create a observer point e4
+nsel, s, loc, x, 6.5*a+l-tol, 6.5*a+l+tol
+nsel, r, loc, y, d-tol, d+tol
+cm, observer_point_e4, node
+
+
+region , 'exc_f_r' , 'exc_f1'
+region , 'exc_f_r' , 'exc_f2'
+region , 'exc_f_r' , 'exc_f3'
+region , 'exc_f_r' , 'exc_f4'
+region , 'sen_coat_r' , 'sen_coat'
+region , 'rec_f_r' , 'rec_f1'
+region , 'rec_f_r' , 'rec_f2'
+region , 'rec_f_r' , 'rec_f3'
+region , 'rec_f_r' , 'rec_f4'
+region , 'silicon_r' , 'silicon'
+
+group , 'outerbounds_left' , 'outerbounds_left'
+group , 'outerbounds_right' , 'outerbounds_right'
+group , 'outerbounds_bot' , 'outerbounds_bot'
+
+group , 'observer_point_1' , 'observer_point_1'
+group , 'observer_point_2' , 'observer_point_2'
+group , 'observer_point_3' , 'observer_point_3'
+group , 'observer_point_4' , 'observer_point_4'
+group , 'observer_point_e4' , 'observer_point_e4'
+
+! ----------------------- !
+! Write NACS Files :
+! ----------------------- !
+writemodel , 'project3'
+

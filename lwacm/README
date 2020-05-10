@@ -1,0 +1,156 @@
+lWACM
+=====
+
+Link-wise Artificial Compressibility Method C implementation
+
+by Yifan Yang with supervisor Thomas Zeiser @ FAU   01.12.2014
+
+
+The source is completely free, do whatever you want.
+
+________________________________________________________________________________________________
+
+>> project description
+   
+   the goal of this project is to implement the lwacm in C and optmize it 
+
+>> file description
+   
+   1, lwacm.c : original source code, after the program finishes, the performance date will be 
+      written into file 'log', with the format as:
+      
+      [nodes_per_dimension]  [domain_size]  [run_time]  [MLUPS]
+      
+      e.g  '100    1000000.000000    0.455536    2.195216'
+      
+   2, run.sh : bash script that passes domain size and time step to the program to run the benchmark
+   
+   3, draw.sh : bash script that draws all the log files into separate plots
+   
+   4, draw.m : octave script that draws a log files with specific name into one plot
+   
+   5, draw_all.m: octave script that draws all log files into one plot
+
+>> guide:
+
+        [command]            [description]
+        
+   1,   make                 compile lwacm
+   2,   ./lwacm s 100 t 10   run the lwacm with N_X = N_Y = N_Z = 100 and time step t = 10
+   3,   ./run.sh             run lwacm with specific range requests
+   
+   
+   wait until all program finishes, and all performance data will be written in file 'log'.
+   
+________________________________________________________________________________________________
+
+change log:
+
+v0.7
+1, optimized data structure for faster execution
+2, use gettimeofday() to mesure execution time
+
+v0.6
+1, use dynamic memory allocation for the array instead of fixed 
+
+v0.5
+1, add another two script to dynamically change the domain size, and run the benchark program
+2, add the ability to change the domain bounds at runtime in lwacm.c
+
+v0.4
+1, add the code generator to generate the source code for different domain size
+2, modify the make file to compile all source codes
+3, add run.sh script to excute all excutables
+4, add MLUps measurement for the code
+
+v0.3
+1, fix the boundary condition code, now the sun of p is stable all the time
+
+
+v0.23
+1, get rid of the store step in mesh loop, which is redundant since we use toggle flag
+
+v0.22
+1, use toggle flag to speed up process, and merge the stroe loop into calculation loop
+2, add time measurement
+3, add MLUps messurement function
+
+
+v0.21
+1, fix some typo
+2, add test() function to show sum of rho() and f()
+
+v0.2
+1, fix the boundary problem by adding 1 to all x, y and z index for p[] and u[].
+2, seperate calculation and store loop to fix the bug of modifing p[0][] while it is still in use.
+3, delete f_e[] and f_e_o[] array, use one variable instead.
+4, hard code compute_p() and compute_u() functions.
+
+v0.1
+1, get rid of all if statements.
+2, instead of using alpha loop, hard coded call back functions to speed up process.
+
+
+Old questioins:
+
+1, equatioin 11, what is f(a,e,o)(x,t) and how to calculate it?
+   it is the current value of E.q 10
+
+2, why do we separate the loop for mesh point x into two different loops?
+   we can also merge it
+
+3, do we store all the intermediata data into the stime step t ?
+   not all of them just 2, current time step and previoud time step
+   e.g. double p_store[t][N_X][N_Y][N_Z]  double u[t][N_X][N_Y][N_Z][3];
+   
+4, it is a good idea to declare variables as globle?
+   you can do it
+
+5, with the initial values of p and u provided, why the values of array f dropped dramatically after the 3rd time step ?
+   because you have illegal access at index "x-xi_alpha"
+
+6, seem that we do not need 2 arraies to store the values of p and u, we can just use e.g. double p_store[N_X][N_Y][N_Z]
+   because the calculation of p and u does not depend on the previous values ?
+   No, because the calculation of f[] still depends on p[0][]
+
+7, is it a good practice to merge the formulas to speed up calculation? e.g change "3.0*1.0/36.0" into "1.0/12.0"
+   No worries, the compiler will do this instead
+
+8, if we need to copy data from p[1][] to p[0][], how about just use *memcpy() *directly?
+   memcpy is evil, too. It causes the same amount of data (memory) traffic as plain C statements.
+
+9, add time measurement before and after the iteration loop and print the number of lattice site
+   updates per second, i.e. (N_X*N_Y*N_Z*T_MAX) / Delta_t. A nice graph also would be
+   performance as function of the domain size.
+   
+   time to setup the simulation and to finalize it does not count, only the iteration loop.
+
+
+__________________________________
+
+server note:
+
+faui00x.informatik.uni-erlangen.de
+CPU: Intel(R) Core(TM) i7-2600
+MEM: 16 GB
+
+faui06x.informatik.uni-erlangen.de
+
+faui0sr0.informatik.uni-erlangen.de
+CPU: Intel(R) Xeon(R) CPU    E7340
+MEM: 32 GB
+
+faui0sr1.informatik.uni-erlangen.de
+
+faui01.informatik.uni-erlangen.de
+CPU: AMD Opteron(tm) Processor 250
+MEM: 8 GB
+
+lse87.e-technick.uni-erlangen.de
+CPU: intel i5  650  @  3.20GHz
+MEM: 4GB
+
+
+
+cshpc.rrze.fau.de
+emmy.rrze.fau.de
